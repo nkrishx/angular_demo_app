@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { User } from '../../models/User';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -8,21 +10,19 @@ import { Component } from '@angular/core';
 
 export class UserComponent {
   // Properties
-  firstName = 'John';
-  lastName = 'Smith';
-  age = 30;
-  address = {
-    street: '50 Main st',
-    city: 'Boston',
-    state: 'MA'
-  };
+  user: User;
 
   // Methods
   constructor() {
-    
-  }
-
-  showAge() {
-    return this.age + 2;
-  }
+    this.user = {
+      firstName: 'John',
+      lastName: 'Doe',
+      age: 30,
+      address: {
+        street: '50 Main st',
+        city: 'Boston',
+        state: 'MA'
+      }
+    }
+  } 
 }
